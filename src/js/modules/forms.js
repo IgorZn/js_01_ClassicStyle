@@ -1,16 +1,13 @@
+import checkNumInputs from "./checkNumInputs";
+
 const forms = () => {
     // Получить все элементы форм
     // получить все input`ы
     const form = document.querySelectorAll('form'),
-        inputs = document.querySelectorAll('input'),
-        phoneInputs = document.querySelectorAll('input[name="user_phone"]');
+        inputs = document.querySelectorAll('input');
 
     // Ввод только цифры
-    phoneInputs.forEach(item => {
-        item.addEventListener('input', () => {
-           item.value = item.value.replace(/\D/, '');
-        });
-    });
+    checkNumInputs('input[name="user_phone"]');
 
     // варианты сообщений
     const message = {
