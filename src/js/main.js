@@ -6,6 +6,10 @@ import changeModalState from "./modules/changeModalState";
 
 window.addEventListener('DOMContentLoaded', () => {
     "use strict"
+
+    // состояние модального окна в котором пользователь
+    // что-то выбирает, а мы записываем это в словарь
+    // и в конце получаем словарь со всеми атрибутами
     let modalState = {};
 
     changeModalState(modalState);
@@ -13,5 +17,5 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active', );
     tabs('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
     tabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
-    forms();
+    forms(modalState);
 })

@@ -1,6 +1,6 @@
 import checkNumInputs from "./checkNumInputs";
 
-const forms = () => {
+const forms = (state) => {
     // Получить все элементы форм
     // получить все input`ы
     const form = document.querySelectorAll('form'),
@@ -46,6 +46,11 @@ const forms = () => {
 
             // Собираем данные из этой формы
             const formDate = new FormData(item);
+            if (item.getAttribute('data-calc') === 'end'){
+                for (let key in state){
+                    formDate.append(key, state[key]);
+                }
+            }
 
             // и отправляем запрос на сервер
             postData('assets/server.php', formDate)
