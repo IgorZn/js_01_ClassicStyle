@@ -34,6 +34,10 @@ const forms = (state) => {
         });
     };
 
+    const closeModalWindow = (selector) => {
+        document.querySelector(selector).style.display = "none";
+    }
+
     // По нажатию (событию) 'submit'
     form.forEach(item =>{
         item.addEventListener('submit', (e) =>{
@@ -68,7 +72,9 @@ const forms = (state) => {
                     clearInputs();
                     setTimeout(() =>{
                         statusMessage.remove();
+                        closeModalWindow('.popup_calc_end');
                     }, 5000);
+
                 })
         })
     })

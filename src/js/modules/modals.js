@@ -1,5 +1,6 @@
 const modals = () => {
     function bindModals(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
+        // привяка окна к определенному тригеру-событию
         const trigger = document.querySelectorAll(triggerSelector),
             modal = document.querySelector(modalSelector),
             close = document.querySelector(closeSelector),
@@ -8,6 +9,9 @@ const modals = () => {
         trigger.forEach(item => {
             item.addEventListener('click', (e) =>{
                 if (e.target) {
+                    // заблокировать стандартное поведение
+                    // объекта, если href, то отменить переход
+                    // по ссылке
                     e.preventDefault();
                 }
 
@@ -39,7 +43,7 @@ const modals = () => {
                    item.style.display = 'none'
                 });
 
-                 modal.style.display = "none";
+                modal.style.display = "none";
                 document.body.style.overflow = "";
                 // document.body.classList.remove('modal-open');
             };
