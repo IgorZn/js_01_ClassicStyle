@@ -73,6 +73,8 @@ const forms = (state) => {
                     setTimeout(() =>{
                         statusMessage.remove();
                         closeModalWindow('.popup_calc_end');
+                        const formDate = new FormData();
+                        console.log(formDate)
                     }, 5000);
 
                 })
