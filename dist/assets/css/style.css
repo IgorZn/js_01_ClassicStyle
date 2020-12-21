@@ -18,6 +18,21 @@ body {
   color: red;
 }
 
+.faded {
+  animation-name: faded;
+  animation-duration: 1.5s;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+  
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -1054,7 +1069,7 @@ textarea:focus {
 }
 
 .no-background {
-  background: url();
+  background-image: url();
 }
 
 .checkbox-custom[id="warm"]::before {
@@ -1817,4 +1832,9 @@ textarea:focus {
     -webkit-animation: none !important;
     animation: none !important;
   }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
